@@ -9,7 +9,7 @@
 
   <artifactId>sicci_for_xcode</artifactId>
   <name>SICCI for Xcode Plugin</name>
-  <version>0.0.8-SNAPSHOT</version>
+  <version>0.0.8</version>
   <description>This plugin integrates support for Xcode projects</description>
   <url>http://wiki.jenkins-ci.org/display/JENKINS/SICCI+for+Xcode+Plugin</url>
   <packaging>hpi</packaging>
