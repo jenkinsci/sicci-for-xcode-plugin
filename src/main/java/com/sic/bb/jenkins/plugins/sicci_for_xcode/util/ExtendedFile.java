@@ -76,14 +76,14 @@ public class ExtendedFile extends File {
     		path += File.separatorChar;
     		
     	ZipArchiveEntry zipEntry = new ZipArchiveEntry(file,path + file.getName());
-    	zipEntry.setUnixMode(PosixAPI.get().stat(file.getAbsolutePath()).mode());
+    	zipEntry.setUnixMode(PosixAPI.jnr().stat(file.getAbsolutePath()).mode());
     	
     	/* TODO: archiving symlinks doesn't work atm
-    	zipEntry.setUnixMode(PosixAPI.get().stat(file.getAbsolutePath()).mode());
+    	zipEntry.setUnixMode(PosixAPI.jnr().stat(file.getAbsolutePath()).mode());
     	
     	if(Util.isSymlink(file)) {
     		zipEntry = new ZipArchiveEntry(path + file.getName());
-    		zipEntry.setUnixMode(PosixAPI.get().stat(file.getAbsolutePath()).mode());
+    		zipEntry.setUnixMode(PosixAPI.jnr().stat(file.getAbsolutePath()).mode());
     		
     		AsiExtraField field = new AsiExtraField();
     		field.setLinkedFile(path + file.getName());
